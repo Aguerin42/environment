@@ -49,6 +49,11 @@ static int	alter_var(char *new, char **environment)
 **
 **	Si la variable `new` n'existe pas et qu'elle est correctement formatée, celle-ci est ajoutée.
 **	Si elle existe, sa valeur est modifiée.
+**
+**	\param	new -			variable à ajouter ou modifier
+**	\param	environment -	environment à modifier
+**
+**	\return	**environnement** modifié ou **NULL** en cas d'erreur.
 */
 
 char	**ft_setenv(char *new, char **environment)

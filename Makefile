@@ -12,7 +12,7 @@ INC_FILE = environment.h
 INC = $(addprefix includes/, $(INC_FILE))
 
 # Sources
-SRC_FILE = dupenv.c ft_getenv.c ft_setenv.c
+SRC_FILE = dupenv.c ft_getenv.c ft_setenv.c print_env.c
 SRC = $(addprefix src/, $(SRC_FILE))
 
 # Objets

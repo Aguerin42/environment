@@ -3,7 +3,7 @@
 **	\author	Alexis Guérin
 **	\date	8 janvier 2018
 **
-**	Copie de l'environnement
+**	\brief	Copie de l'environnement
 */
 
 #include "environment.h"
@@ -13,7 +13,10 @@
 **
 **	La fonction alloue la mémoire nécessaire pour pouvoir copier l'environnement et retourne cette copie.
 **
-**	\brief	**Copie** de l'environnement ou **NULL** en cas d'erreur.
+**	\param	environment -	environnement à copier
+**	\param	size -			taille du nouvel environmment
+**
+**	\return	**copie** de l'environnement ou **NULL** en cas d'erreur.
 */
 
 char	**dupenv(const char **environment, int size)
