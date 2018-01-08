@@ -6,23 +6,6 @@
 
 #include "environment.h"
 
-static int	find_var(const char *var, char **environment)
-{
-	int	i;
-	int	len;
-
-	if (var && environment)
-	{
-		i = -1;
-		len = ft_strlen(var);
-		while (environment[++i])
-			if (ft_strnequ(var, environment[i], len))
-				if ((environment[i][len] && environment[i][len] == '='))
-					return (i);
-	}
-	return (-1);
-}
-
 /**
 **	\brief	Récupération de variable
 **
@@ -41,7 +24,7 @@ char		*ft_getenv(const char *name, char **environment)
 	value = NULL;
 	if (name && environment)
 	{
-		if ((i = find_var(name, environment)) >= 0)
+		if ((i = find_var(name, environment, 0)) >= 0)
 		{
 			value = environment[i];
 			if ((value = ft_strchr(value, '=')))

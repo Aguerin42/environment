@@ -9,6 +9,9 @@
 
 # include "libft.h"
 
+char	**dupenv(const char **environment, int size);
+int		find_var(const char *var, char **environment, int egal);
 char	*ft_getenv(const char *name, char **environment);
+char	**ft_setenv(char *new, char **environment);
 
 #endif
