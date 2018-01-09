@@ -20,7 +20,7 @@
 **	\return	**valeur** de la variable ou **NULL** si elle n'existe pas.
 */
 
-char		*ft_getenv(const char *name, char **environment)
+char	*ft_getenv(const char *name, char **environment)
 {
 	int		i;
 	char	*value;
@@ -56,7 +56,7 @@ char		*ft_getenv(const char *name, char **environment)
 **			ou **-1** si elle n'y est pas.
 */
 
-int	find_var(const char *var, char **environment, int egal)
+int		find_var(const char *var, char **environment, int egal)
 {
 	int		i;
 	int		len;

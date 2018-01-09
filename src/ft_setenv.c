@@ -14,25 +14,25 @@ static int	add_var(char *new, char ***environment)
 	int		len;
 	char	**copy;
 
-	if (new && environment)
+	if (!new || !environment)
+		return (1);
+	size = 0;
+	while (environment[0][size])
+		size++;
+	if ((copy = dupenv((const char **)*environment, size + 1)))
 	{
-		size = 0;
-		while (environment[0][size])
-			size++;
-		if ((copy = dupenv((const char **)*environment, size + 1)))
+		ft_strdeldouble(*environment);
+		if (ft_strchr(new, '='))
+			copy[size] = ft_strdup(new);
+		else
 		{
-			ft_strdeldouble(*environment);
-			if (ft_strchr(new, '='))
-				copy[size] = ft_strdup(new);
-			else
-			{
-				copy[size] = ft_strnew((len = ft_strlen(new)) + 1);
-				ft_strcpy(copy[size], new);
-				copy[size][len] = '=';
-			}
-			*environment = copy;
-			return (0);
+			len = ft_strlen(new);
+			copy[size] = ft_strnew(len + 1);
+			ft_strcpy(copy[size], new);
+			copy[size][len] = '=';
 		}
+		*environment = copy;
+		return (0);
 	}
 	return (1);
 }
