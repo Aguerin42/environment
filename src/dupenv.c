@@ -11,7 +11,8 @@
 /**
 **	\brief	Copie de l'environnement
 **
-**	La fonction alloue la mémoire nécessaire pour pouvoir copier l'environnement et retourne cette copie.
+**	La fonction alloue la mémoire nécessaire pour pouvoir copier l'environnement
+**	et retourne cette copie.
 **
 **	\param	environment -	environnement à copier
 **	\param	size -			taille du nouvel environmment

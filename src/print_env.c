@@ -13,18 +13,17 @@
 **
 **	\param	environment -	environnement à afficher
 **
-**	\return	**0** si l'affichage s'est effectué correctement ou **1** en cas d'erreur.
+**	\return	**0** si l'affichage s'est effectué correctement
+**			ou **1** en cas d'erreur.
 */
 
 int	print_env(const char **environment)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (environment)
-		while (environment[++i])
-			ft_putendl(environment[i]);
-	else
-		i = 0;
+		while (environment[i])
+			ft_putendl(environment[i++]);
 	return (!i);
 }
