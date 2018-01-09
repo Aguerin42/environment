@@ -10,16 +10,18 @@
 
 static int	ft_unset(char ***environment, int i)
 {
+	int		len;
 	char	**environ;
 
 	if (environment && i >= 0)
 	{
+		environ = NULL;
 		ft_strdel(&environment[0][i]);
 		environment[0][i] = environment[0][i + 1];
 		while (environment[0][++i])
 			environment[0][i] = environment[0][i + 1];
-		if (!(environ =
-			dupenv((const char**)*environment, ft_strlendouble(*environment))))
+		len = ft_strlendouble(*environment);
+		if (len && !(environ = dupenv((const char**)*environment, len)))
 			return (ft_putendl("unsetenv: duplication error"));
 		*environment = environ;
 		return (0);

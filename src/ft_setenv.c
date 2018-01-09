@@ -51,7 +51,7 @@ static int	set(char *new, char ***environment)
 {
 	int	i;
 
-	if (new  && environment)
+	if (new && environment)
 	{
 		if (new[0] == '=')
 			return (ft_putendl_fd("setenv: bad assignment", 2));
@@ -81,7 +81,7 @@ int			ft_setenv(char **new, char ***environment)
 	int	ret;
 
 	i = 0;
-	if (new && environment)
+	if (new && environment && *environment)
 	{
 		ret = 0;
 		while (new[i])
