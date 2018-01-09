@@ -8,38 +8,57 @@
 
 #include "environment.h"
 
-static char	**add_var(char *new, char **environment)
+static int	add_var(char *new, char ***environment)
 {
 	int		size;
+	int		len;
 	char	**copy;
 
 	if (new && environment)
 	{
-		ft_putendl("add");
 		size = 0;
-		while (environment[size])
+		while (environment[0][size])
 			size++;
-		if ((copy = dupenv((const char **)environment, size + 1)))
+		if ((copy = dupenv((const char **)*environment, size + 1)))
 		{
-			ft_strdeldouble(environment);
-			copy[size] = ft_strdup(new);
-			environment = copy;
+			ft_strdeldouble(*environment);
+			if (ft_strchr(new, '='))
+				copy[size] = ft_strdup(new);
+			else
+			{
+				copy[size] = ft_strnew((len = ft_strlen(new)) + 1);
+				ft_strcpy(copy[size], new);
+				copy[size][len] = '=';
+			}
+			*environment = copy;
+			return (0);
 		}
-		else
-			ft_putendl("oups");
 	}
-	return (environment);
+	return (1);
 }
 
-static int	alter_var(char *new, char **environment)
+static int	alter_var(char *new, char **environment, int i)
+{
+	if (new && environment && ft_strchr(new, '='))
+	{
+		ft_strdel(&environment[i]);
+		environment[i] = ft_strdup(new);
+	}
+	return (1);
+}
+
+static int	set(char *new, char ***environment)
 {
 	int	i;
 
-	if (new && environment)
+	if (new  && environment)
 	{
-		i = find_var(new, environment, 1);
-		ft_strdel(&environment[i]);
-		environment[i] = ft_strdup(new);
+		if (new[0] == '=')
+			return (ft_putendl_fd("setenv: bad assignment", 2));
+		if ((i = find_var(new, environment[0], 1)) < 0)
+			return (add_var(new, environment));
+		else
+			return (alter_var(new, *environment, i));
 	}
 	return (1);
 }
@@ -47,23 +66,28 @@ static int	alter_var(char *new, char **environment)
 /**
 **	Ajout ou modification de variable
 **
-**	Si la variable `new` n'existe pas et qu'elle est correctement formatée, celle-ci est ajoutée.
-**	Si elle existe, sa valeur est modifiée.
+**	Si la variable `new` n'existe pas et qu'elle est correctement formatée,
+**	celle-ci est ajoutée. Si elle existe, sa valeur est modifiée.
 **
-**	\param	new -			variable à ajouter ou modifier
+**	\param	new -			variables à ajouter ou modifier
 **	\param	environment -	environment à modifier
 **
-**	\return	**environnement** modifié ou **NULL** en cas d'erreur.
+**	\return	**0** en cas de succès, **1** en cas d'erreur.
 */
 
-char	**ft_setenv(char *new, char **environment)
+int			ft_setenv(char **new, char ***environment)
 {
-	if (new && *environment)
+	int	i;
+	int	ret;
+
+	i = 0;
+	if (new && environment)
 	{
-		if (find_var(new, environment, 1) < 0)
-			environment = add_var(new, environment);
-		else
-			alter_var(new, environment);
+		ret = 0;
+		while (new[i])
+			if (set(new[i++], environment))
+				ret = 1;
+		return (ret);
 	}
-	return (environment);
+	return (1);
 }
