@@ -41,12 +41,12 @@ re: fclean all
 
 doxygen:
 	@echo "$(CYAN)Génération de la documentation de $(PROJECT)$(RESET)"
-	@mkdir -p Docs
-	@$(DOXYGEN) $(PROJECT).doxyconf > Docs/$(PROJECT).log
+	@$(DOXYGEN) documentation/$(PROJECT).doxyconf > documentation/$(PROJECT).log
 
 cleandoxy:
 	@echo "Suppression de la documentation de $(PROJECT)"
-	@rm -rf Docs/
+	@rm -rf documentation/html
+	@rm -rf documentation/$(PROJECT).log
 
 # Couleurs
 RESET = \033[0m
