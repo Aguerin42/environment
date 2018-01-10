@@ -32,10 +32,7 @@ char	**dupenv(const char **environment, int size)
 		if ((copy = (char**)ft_memalloc(sizeof(char*) * (size + 1))))
 			while (++i < size && copy)
 				if (environment[i] && !(copy[i] = ft_strdup(environment[i])))
-				{
-					ft_strdeldouble(copy);
-					copy = NULL;
-				}
+					ft_strdeldouble(&copy);
 	}
 	return (copy);
 }
