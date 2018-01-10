@@ -39,6 +39,12 @@ fclean: clean
 
 re: fclean all
 
+# Règle pour la norme
+norme: clean
+	@echo "$(MAGEN)Norme pour $(PROJECT)$(RESET)"
+	@norminette includes/ src/
+
+# Règles pour la documentation
 doxygen:
 	@echo "$(CYAN)Génération de la documentation de $(PROJECT)$(RESET)"
 	@$(DOXYGEN) documentation/$(PROJECT).doxyconf > documentation/$(PROJECT).log
