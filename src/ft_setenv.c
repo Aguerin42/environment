@@ -64,7 +64,7 @@ static int	set(char *new, char ***environment)
 }
 
 /**
-**	Ajout ou modification de variable
+**	\brief Ajout ou modification de variable
 **
 **	Si la variable `new` n'existe pas et qu'elle est correctement formatée,
 **	celle-ci est ajoutée. Si elle existe, sa valeur est modifiée.
