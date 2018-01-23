@@ -24,7 +24,7 @@ static int	ft_unset(char ***environment, int i)
 			len = 1;
 		if (len && !(environ = dupenv((const char**)*environment, len)))
 			return (ft_putendl("unsetenv: duplication error"));
-		ft_strdeldouble(environment[0]);
+		ft_strdeldouble(environment);
 		*environment = environ;
 		return (0);
 	}
