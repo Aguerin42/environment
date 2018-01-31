@@ -68,7 +68,10 @@ int		find_var(const char *var, char **environment, int egal)
 		if (egal)
 		{
 			ret = ft_strchr(var, '=');
-			len = ret ? ret - var : ft_strlen(var);
+			if (ret)
+				len = (ret - var);
+			else
+				len = ft_strlen(var);
 		}
 		else
 			len = ft_strlen(var);
