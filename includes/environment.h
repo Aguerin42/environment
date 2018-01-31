@@ -8,6 +8,7 @@
 # define ENVIRONMENT_H
 
 # include "libft.h"
+# include "libag.h"
 
 char	**dupenv(const char **environment, int size);
 
