@@ -69,8 +69,9 @@ static int	set(char *new, char ***environment)
 **	Si la variable `new` n'existe pas et qu'elle est correctement formatée,
 **	celle-ci est ajoutée. Si elle existe, sa valeur est modifiée.
 **
-**	\param	new -			variables à ajouter ou modifier
-**	\param	environment -	environment à modifier
+**	\param	new				- variables à ajouter ou modifier
+**	\param	environment 	- environment à modifier
+**							La variable doit avoir été allouée dynamiquement
 **
 **	\return	**0** en cas de succès, **1** en cas d'erreur.
 */

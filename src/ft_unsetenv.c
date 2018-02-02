@@ -34,8 +34,9 @@ static int	ft_unset(char ***environment, int i)
 /**
 ** \brief	Suppression de variable(s) d'environnement.
 **
-** \param	argv -			variables à supprimer
-** \param	environment -	environnement à modifier
+** \param	argv		- variables à supprimer
+** \param	environment - environnement à modifier
+**						La variable doit avoir été allouée dynamiquement.
 **
 ** \return	**0** si la suppression a été effectuée avec succès
 **			ou une valeur **non nulle** en cas d'erreur.

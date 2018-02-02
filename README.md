@@ -1,7 +1,7 @@
 libenv - Gestion de l'environnement
 ------------------------------------
 
-La bibliothèque **libenv** permet la gestion de l'environnement à l'aide de fonctions de recherche, de création et de suppression de variables.
+La bibliothèque **libenv** permet la gestion d'une copie de l'environnement à l'aide de fonctions de recherche, de création et de suppression de variables.
 
 ## Utilisation et compilation
 

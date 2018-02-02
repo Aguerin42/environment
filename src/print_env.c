@@ -11,7 +11,7 @@
 /**
 **	\brief	Affichage des variables d'environnement
 **
-**	\param	environment -	environnement à afficher
+**	\param	environment	- environnement à afficher
 **
 **	\return	**0** si l'affichage s'est effectué correctement
 **			ou **1** en cas d'erreur.

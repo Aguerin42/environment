@@ -14,8 +14,8 @@
 **	La fonction alloue la mémoire nécessaire pour pouvoir copier l'environnement
 **	et retourne cette copie.
 **
-**	\param	environment -	environnement à copier
-**	\param	size -			taille du nouvel environmment
+**	\param	environment	- environnement à copier
+**	\param	size		- taille du nouvel environmment
 **
 **	\return	**copie** de l'environnement ou **NULL** en cas d'erreur.
 */

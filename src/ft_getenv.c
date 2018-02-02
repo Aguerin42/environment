@@ -14,8 +14,8 @@
 **	La fonction cherche la variable dans l'environnement et renvoie sa valeur.
 **	Si la variable n'existe pas, *NULL* est renvoyé.
 **
-**	\param	name -			variable à chercher
-**	\param	environment -	environnement où chercher
+**	\param	name		- variable à chercher
+**	\param	environment	- environnement où chercher
 **
 **	\return	**valeur** de la variable ou **NULL** si elle n'existe pas.
 */
@@ -46,11 +46,11 @@ char	*ft_getenv(const char *name, char **environment)
 **	Le booléen `egal` permet d'indiquer si la recherche doit ignorer le
 **	caractère égal et ce qui suit lors de la comparaison (`1`) ou non (`0`).
 **
-**	\param	var	-			variable à chercher
-**	\param	environment -	environnement où chercher
-**	\param	egal -			booléen : **0** si toute la chaîne `var` doit être
-**							comparée, **1** si seuls les caractères précédents
-**							le `=` doivent être comparés
+**	\param	var			- variable à chercher
+**	\param	environment	- environnement où chercher
+**	\param	egal		- booléen : **0** si toute la chaîne `var` doit être
+**						comparée, **1** si seuls les caractères précédents
+**						le `=` doivent être comparés
 **
 **	\return	**indice** de la variable dans `environment`
 **			ou **-1** si elle n'y est pas.
