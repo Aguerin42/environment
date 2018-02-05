@@ -21,7 +21,7 @@ static int	add_var(char *new, char ***environment)
 		size++;
 	if ((copy = dupenv((const char **)*environment, size + 1)))
 	{
-		ft_strdeldouble(environment);
+		ag_strdeldouble(environment);
 		if (ft_strchr(new, '='))
 			copy[size] = ft_strdup(new);
 		else
