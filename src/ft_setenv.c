@@ -55,7 +55,7 @@ static int	set(char *new, char ***environment)
 	{
 		if (new[0] == '=')
 			return (ft_putendl_fd("setenv: bad assignment", 2));
-		if ((i = find_var(new, environment[0], 1)) < 0)
+		if ((i = find_var(new, (const char**)environment[0], 1)) < 0)
 			return (add_var(new, environment));
 		else
 			return (alter_var(new, *environment, i));

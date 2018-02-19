@@ -52,7 +52,7 @@ int			ft_unsetenv(char **argv, char ***environment)
 	{
 		i = -1;
 		while (argv[++i])
-			ft_unset(environment, find_var(argv[i], environment[0], 0));
+			ft_unset(environment, find_var(argv[i], (const char**)environment[0], 0));
 	}
 	else if (argv && !argv[0])
 		return (ft_putendl_fd("unsetenv: not enough arguments", 2));

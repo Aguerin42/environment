@@ -12,8 +12,8 @@
 
 char	**dupenv(const char **environment, int size);
 
-char	*ft_getenv(const char *name, char **environment);
-int		find_var(const char *var, char **environment, int egal);
+char	*ft_getenv(const char *name, const char **environment);
+int		find_var(const char *var, const char **environment, int egal);
 
 int		ft_setenv(char **new, char ***environment);
 

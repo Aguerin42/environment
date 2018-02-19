@@ -20,7 +20,7 @@
 **	\return	**valeur** de la variable ou **NULL** si elle n'existe pas.
 */
 
-char	*ft_getenv(const char *name, char **environment)
+char	*ft_getenv(const char *name, const char **environment)
 {
 	int		i;
 	char	*value;
@@ -30,7 +30,7 @@ char	*ft_getenv(const char *name, char **environment)
 	{
 		if ((i = find_var(name, environment, 0)) >= 0)
 		{
-			value = environment[i];
+			value = (char*)environment[i];
 			if ((value = ft_strchr(value, '=')))
 				value++;
 		}
@@ -56,7 +56,7 @@ char	*ft_getenv(const char *name, char **environment)
 **			ou **-1** si elle n'y est pas.
 */
 
-int		find_var(const char *var, char **environment, int egal)
+int		find_var(const char *var, const char **environment, int egal)
 {
 	int		i;
 	int		len;
@@ -76,7 +76,7 @@ int		find_var(const char *var, char **environment, int egal)
 		else
 			len = ft_strlen(var);
 		while (environment[++i])
-			if (ft_strnequ(var, environment[i], len))
+			if (ft_strnequ(var, (char*)environment[i], len))
 				if ((environment[i][len] && environment[i][len] == '='))
 					return (i);
 	}
