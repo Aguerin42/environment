@@ -32,9 +32,9 @@ static int	ft_unset(char ***environment, int i)
 }
 
 /**
-** \brief	Suppression de variable(s) d'environnement.
+** \brief	Suppression de variable d'environnement.
 **
-** \param	argv		- variables à supprimer
+** \param	var			- variables à supprimer
 ** \param	environment - environnement à modifier
 **						La variable doit avoir été allouée dynamiquement.
 **
@@ -42,19 +42,14 @@ static int	ft_unset(char ***environment, int i)
 **			ou une valeur **non nulle** en cas d'erreur.
 */
 
-int			ft_unsetenv(char **argv, char ***environment)
+int			ft_unsetenv(char *var, char ***environment)
 {
-	int	i;
 	int	ret;
 
 	ret = 1;
-	if (argv && argv[0] && environment && environment[0])
-	{
-		i = -1;
-		while (argv[++i])
-			ft_unset(environment, find_var(argv[i], (const char**)environment[0], 0));
-	}
-	else if (argv && !argv[0])
+	if (var && environment && environment[0])
+		ret = ft_unset(environment, find_var(var, (const char**)environment[0], 0));
+	else if (!var)
 		return (ft_putendl_fd("unsetenv: not enough arguments", 2));
 	return (ret);
 }

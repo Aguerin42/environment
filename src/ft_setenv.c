@@ -43,6 +43,7 @@ static int	alter_var(char *new, char **environment, int i)
 	{
 		ft_strdel(&environment[i]);
 		environment[i] = ft_strdup(new);
+		return (0);
 	}
 	return (1);
 }
@@ -69,26 +70,19 @@ static int	set(char *new, char ***environment)
 **	Si la variable `new` n'existe pas et qu'elle est correctement formatée,
 **	celle-ci est ajoutée. Si elle existe, sa valeur est modifiée.
 **
-**	\param	new				- variables à ajouter ou modifier
+**	\param	new				- variable à ajouter ou modifier
 **	\param	environment 	- environment à modifier
 **							La variable doit avoir été allouée dynamiquement
 **
 **	\return	**0** en cas de succès, **1** en cas d'erreur.
 */
 
-int			ft_setenv(char **new, char ***environment)
+int			ft_setenv(char *new, char ***environment)
 {
-	int	i;
 	int	ret;
 
-	i = 0;
+	ret = 1;
 	if (new && environment && *environment)
-	{
-		ret = 0;
-		while (new[i])
-			if (set(new[i++], environment))
-				ret = 1;
-		return (ret);
-	}
-	return (1);
+		ret = set(new, environment);
+	return (ret);
 }
