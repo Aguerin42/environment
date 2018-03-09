@@ -1,6 +1,7 @@
 /**
 **	\file	ft_setenv.c
 **	\author	Alexis Guérin
+**	\author	tgrange
 **	\date	8 janvier 2018
 **
 **	\brief	Ajout de variables
@@ -62,6 +63,45 @@ static int	set(char *new, char ***environment)
 			return (alter_var(new, *environment, i));
 	}
 	return (1);
+}
+
+/**
+**	\brief	Création d'une variable d'environnement à partir de deux
+**
+**	La fonction crée une variable d'environnement de type
+**
+**		VARIABLE=valeur
+**
+**	à partir de deux variables séparées, et l'ajoute à l'environnement.
+**
+**	\author	tgrange
+**
+**	\param	var			- nom de la variable
+**	\param	content		- contenu de la variable
+**	\param	environment	- environnement à modifier
+**
+**	\return	**0** en cas de succès, **1** en cas d'erreur.
+*/
+
+int			ft_vcontenv(const char *var, const char *content, char ***environment)
+{
+	char	*varcon;
+	int		len;
+	int		ret;
+
+	ret = 1;
+	if (var && content && environment)
+	{
+		len = ft_strlen(var) + ft_strlen(content) + 1;
+		if (!(varcon = ft_strnew(len)))
+			return (ret);
+		varcon = ft_strcpy(varcon, var);
+		varcon = ft_strcat(varcon, "=");
+		varcon = ft_strcat(varcon, content);
+		ret = ft_setenv(varcon, environment);
+		ft_strdel(&varcon);
+	}
+	return (ret);
 }
 
 /**
