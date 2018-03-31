@@ -46,13 +46,15 @@ norme: clean
 
 # Règles pour la documentation
 doxygen:
-	@echo "$(CYAN)Génération de la documentation de $(PROJECT)$(RESET)"
-	@$(DOXYGEN) documentation/$(PROJECT).doxyconf > documentation/$(PROJECT).log
+	@echo "$(JAUNE)La documentation pour $(PROJECT) n'existe plus$(RESET)"
+#	@echo "$(CYAN)Génération de la documentation de $(PROJECT)$(RESET)"
+#	@$(DOXYGEN) documentation/$(PROJECT).doxyconf > documentation/$(PROJECT).log
 
 cleandoxy:
-	@echo "Suppression de la documentation de $(PROJECT)"
-	@rm -rf documentation/html
-	@rm -rf documentation/$(PROJECT).log
+	@echo "$(JAUNE)La documentation pour $(PROJECT) n'existe plus$(RESET)"
+#	@echo "Suppression de la documentation de $(PROJECT)"
+#	@rm -rf documentation/html
+#	@rm -rf documentation/$(PROJECT).log
 
 # Couleurs
 RESET = \033[0m

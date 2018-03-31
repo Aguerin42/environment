@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_env.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:04:44 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:21:08 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 **	\file	print_env.c
 **	\author	Alexis Guérin
 **	\date	8 janvier 2018
@@ -8,7 +20,7 @@
 
 #include "environment.h"
 
-/**
+/*
 **	\brief	Affichage des variables d'environnement
 **
 **	\param	environment	- environnement à afficher

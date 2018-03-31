@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   environment.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:00:03 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:00:40 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 **	\file	environment.h
 **	\author	Alexis Guérin
 **	\date	8 janvier 2018
@@ -11,7 +23,6 @@
 # include "libag.h"
 
 char	**dupenv(const char **environment, int size);
-
 
 char	*ft_getenv(const char *name, const char **environment);
 int		find_var(const char *var, const char **environment, int egal);

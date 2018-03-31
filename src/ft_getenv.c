@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_getenv.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:02:42 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:10:45 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 **	\file	ft_getenv.c
 **	\author	Alexis Guérin
 **	\date	8 janvier 2018
@@ -8,10 +20,12 @@
 
 #include "environment.h"
 
-/**
+/*
 **	\brief	Récupération de variable
 **
-**	La fonction cherche la variable dans l'environnement et renvoie sa valeur.
+**	La fonction cherche la variable dans l'environnement
+**	et renvoie sa *valeur*.
+**
 **	Si la variable n'existe pas, *NULL* est renvoyé.
 **
 **	\param	name		- variable à chercher
@@ -38,11 +52,11 @@ char	*ft_getenv(const char *name, const char **environment)
 	return (value);
 }
 
-/**
+/*
 **	\brief	Recherche de variable
 **
 **	La fonction cherche la variable `var` dans l'environnement et renvoie
-**	l'indice de sa position.
+**	l'*indice de sa position*.
 **	Le booléen `egal` permet d'indiquer si la recherche doit ignorer le
 **	caractère égal et ce qui suit lors de la comparaison (`1`) ou non (`0`).
 **

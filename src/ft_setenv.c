@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_setenv.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:03:25 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:04:12 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 **	\file	ft_setenv.c
 **	\author	Alexis Guérin
 **	\author	tgrange
@@ -65,7 +77,7 @@ static int	set(char *new, char ***environment)
 	return (1);
 }
 
-/**
+/*
 **	\brief	Création d'une variable d'environnement à partir de deux
 **
 **	La fonction crée une variable d'environnement de type
@@ -83,7 +95,8 @@ static int	set(char *new, char ***environment)
 **	\return	**0** en cas de succès, **1** en cas d'erreur.
 */
 
-int			ft_vcontenv(const char *var, const char *content, char ***environment)
+int			ft_vcontenv(const char *var, const char *content,
+													char ***environment)
 {
 	char	*varcon;
 	int		len;
@@ -104,7 +117,7 @@ int			ft_vcontenv(const char *var, const char *content, char ***environment)
 	return (ret);
 }
 
-/**
+/*
 **	\brief Ajout ou modification de variable
 **
 **	Si la variable `new` n'existe pas et qu'elle est correctement formatée,

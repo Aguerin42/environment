@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dupenv.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:01:00 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:08:12 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 **	\file	dupenv.c
 **	\author	Alexis Guérin
 **	\date	8 janvier 2018
@@ -8,14 +20,14 @@
 
 #include "environment.h"
 
-/**
+/*
 **	\brief	Copie de l'environnement
 **
 **	La fonction alloue la mémoire nécessaire pour pouvoir copier l'environnement
 **	et retourne cette copie.
 **
 **	\param	environment	- environnement à copier
-**	\param	size		- taille du nouvel environmment
+**	\param	size		- taille de l'environmment
 **
 **	\return	**copie** de l'environnement ou **NULL** en cas d'erreur.
 */

@@ -1,4 +1,16 @@
-/**
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/31 14:04:19 by aguerin           #+#    #+#             */
+/*   Updated: 2018/03/31 14:20:13 by aguerin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 ** \file	ft_unsetenv.c
 ** \author	Alexis Guérin
 ** \date	8 janvier 2017
@@ -31,7 +43,7 @@ static int	ft_unset(char ***environment, int i)
 	return (1);
 }
 
-/**
+/*
 ** \brief	Suppression de variable d'environnement.
 **
 ** \param	var			- variables à supprimer
@@ -48,8 +60,7 @@ int			ft_unsetenv(char *var, char ***environment)
 
 	ret = 1;
 	if (var && environment && environment[0])
-		ret = ft_unset(environment, find_var(var, (const char**)environment[0], 0));
-	else if (!var)
-		return (ft_putendl_fd("unsetenv: not enough arguments", 2));
+		ret = ft_unset(environment,
+				find_var(var, (const char**)environment[0], 0));
 	return (ret);
 }
