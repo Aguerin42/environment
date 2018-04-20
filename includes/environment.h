@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguerin <aguerin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tgrange <tgrange@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:00:03 by aguerin           #+#    #+#             */
-/*   Updated: 2018/03/31 14:00:40 by aguerin          ###   ########.fr       */
+/*   Updated: 2018/04/19 18:35:16 by tgrange          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 # include "libft.h"
 # include "libag.h"
+# include "liberror.h"
 
 char	**dupenv(const char **environment, int size);
 

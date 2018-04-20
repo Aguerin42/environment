@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dupenv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgrange <tgrange@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:01:00 by aguerin           #+#    #+#             */
-/*   Updated: 2018/03/31 14:08:12 by aguerin          ###   ########.fr       */
+/*   Updated: 2018/04/19 18:36:00 by tgrange          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ char	**dupenv(const char **environment, int size)
 		if ((copy = (char**)ft_memalloc(sizeof(char*) * (size + 1))))
 			while (++i < size && copy)
 				if (environment[i] && !(copy[i] = ft_strdup(environment[i])))
+				{
 					ag_strdeldouble(&copy);
+					return (sh_error(1, "dupenv"));
+				}
 	}
 	return (copy);
 }
