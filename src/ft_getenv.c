@@ -1,23 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_getenv.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aguerin <aguerin@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/31 14:02:42 by aguerin           #+#    #+#             */
-/*   Updated: 2018/03/31 14:10:45 by aguerin          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*
-**	\file	ft_getenv.c
-**	\author	Alexis Guérin
-**	\date	8 janvier 2018
-**
-**	\brief	Recherche et récupération de variables
-*/
-
 #include "environment.h"
 
 /*

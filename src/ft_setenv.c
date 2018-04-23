@@ -1,24 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_setenv.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/31 14:03:25 by aguerin           #+#    #+#             */
-/*   Updated: 2018/03/31 14:04:12 by aguerin          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*
-**	\file	ft_setenv.c
-**	\author	Alexis Guérin
-**	\author	tgrange
-**	\date	8 janvier 2018
-**
-**	\brief	Ajout de variables
-*/
-
 #include "environment.h"
 
 static int	add_var(char *new, char ***environment)

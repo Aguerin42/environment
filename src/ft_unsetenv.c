@@ -1,23 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_unsetenv.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aguerin <aguerin42@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/31 14:04:19 by aguerin           #+#    #+#             */
-/*   Updated: 2018/03/31 14:20:13 by aguerin          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*
-** \file	ft_unsetenv.c
-** \author	Alexis Guérin
-** \date	8 janvier 2017
-**
-** \brief	Suppression de variables
-*/
-
 #include "environment.h"
 
 static int	ft_unset(char ***environment, int i)
