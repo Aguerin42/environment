@@ -7,6 +7,8 @@
 
 char	**dupenv(const char **environment, int size);
 
+char	*getenvloc(const char *name, const char **loc, const char **env);
+
 char	*ft_getenv(const char *name, const char **environment);
 int		find_var(const char *var, const char **environment, int egal);
 
