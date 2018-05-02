@@ -22,12 +22,16 @@ char	**dupenv(const char **environment, int size)
 	{
 		i = -1;
 		if ((copy = (char**)ft_memalloc(sizeof(char*) * (size + 1))))
+		{
 			while (++i < size && copy)
 				if (environment[i] && !(copy[i] = ft_strdup(environment[i])))
 				{
 					ag_strdeldouble(&copy);
 					return (sh_error(1, "dupenv"));
 				}
+		}
+		else
+			return ((char**)sh_error_exit(1, "in dupenv function"));
 	}
 	return (copy);
 }
