@@ -65,8 +65,6 @@ static int	set(char *new, char ***environment)
 **
 **	à partir de deux variables séparées, et l'ajoute à l'environnement.
 **
-**	\author	tgrange
-**
 **	\param	var			- nom de la variable
 **	\param	content		- contenu de la variable
 **	\param	environment	- environnement à modifier
